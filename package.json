@@ -10,11 +10,14 @@
     "start": "mocha --bail --watch --require intelli-espower-loader --timeout 30000",
     "test": "istanbul cover _mocha --report text --report html --report lcov -- -R spec --timeout 30000",
     "posttest": "npm run lint",
-    "lint": "eslint lib test"
+    "lint": "eslint lib test",
+    "snyk-protect": "snyk protect",
+    "prepublish": "npm run snyk-protect"
   },
   "dependencies": {
     "babel-template": "^6.5.0",
-    "lodash": "^4.3.0"
+    "lodash": "^4.3.0",
+    "snyk": "^1.189.0"
   },
   "devDependencies": {
     "babel-core": "^6.5.1",
@@ -43,5 +46,6 @@
   "bugs": {
     "url": "https://github.com/59naga/babel-plugin-add-module-exports/issues"
   },
-  "homepage": "https://github.com/59naga/babel-plugin-add-module-exports#readme"
+  "homepage": "https://github.com/59naga/babel-plugin-add-module-exports#readme",
+  "snyk": true
 }
